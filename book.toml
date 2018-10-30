@@ -1,0 +1,5 @@
+[book]
+authors = ["Nicola Coretti"]
+multilingual = false
+src = "src"
+title = "Writting Command Line Tools"
