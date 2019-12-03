@@ -1,4 +1,4 @@
-A book about command line tools.
+# A book about command line tools
 
 0. Understanding in what environment they operate
 1. Using Them
