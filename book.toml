@@ -3,3 +3,6 @@ authors = ["Nicola Coretti"]
 multilingual = false
 src = "src"
 title = "Writting Command Line Tools"
+
+[output.html]
+default-theme = "Coal"
