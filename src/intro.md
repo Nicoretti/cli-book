@@ -14,6 +14,3 @@ UI for the user while calling the CLI behind the scenes to handle the requests a
 responses. This means the GUI never has to be concerned with the business logic of the CLI, and the
 CLI never has to be concerned with the UI and display of the tool to the user.
 
-## Structure of This Book
-** TBD **
-

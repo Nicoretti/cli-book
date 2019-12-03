@@ -1,4 +1,5 @@
-# Best Practices
+# Writing Command Line Tools
+
 ## Creating a cli
 
 ### CLI Interface
