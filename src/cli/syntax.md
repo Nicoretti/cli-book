@@ -62,7 +62,8 @@ options:
 | **TEXT**  | Upper case Text without brackets or braces                    |
 | **\<**name**\>**  | Placeholder for which you must supply a value       |
 | **[]**    | Optional items                                                |
-| **{}**    | Set of required items; choose one                             |
+| **{}**    | Set of mutually exclusive but required items; choose one                             |
+| **()**    | Set of mutually exclusive but required items; choose one                             |
 | **\|**    | Vertical bar, Separator for mutually exclusive items; choose one |
 | **(…)**   | Ellipsis                                                      |
 | **-**     | Dash (often used as file argument parameter to specify stdin as file |
