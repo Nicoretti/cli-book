@@ -68,38 +68,6 @@ options:
 | **-**     | Dash (often used as file argument parameter to specify stdin as file |
 | **--**    | used to indicate the end of the options when running a command. E.g. very useful if you want to delete a file with the name *-option* |
 
-## Command BNF based on CLI Elements?
-
-command_line = command options arguments
-command = Text
-options = ...(flag | switch | option)
-flag = -[Text] | --[Text]
-switch = -[Text]valarg | --[Text]valarg
-valarg =  arg | =arg | <arg> | =<arg>
-
-## Command suit BNF based on CLI Elements?
-command_line = command [global_options] subcommand options arguments
-command = Text
-subcommand = Text
-options = ...(flag | switch | option)
-
-#### Text and TEXT
-Text usually is used to either indicate items which need to be typed as shown or to define a placeholder.
-
-*TBD* - Example subcommand (typed as shown)
-*TBD* - Example OPTIONS    (placeholder)
-
-### Angle Brackets \< \>
-Angle brackets are used to define a placeholder for a operand/parameter/value.
-
-*TBD* - Example required arg
-*TBD* - Value for an option
-
-### Required Elements/Arguements
-### Placeholders, Values
-### Mutullay Exclusive Elements
-### Required Mutullay Exclusive Elements
-
 
 #### Overview
 
