@@ -75,12 +75,18 @@ options:
 ### Common CLI Elements
 A definition of the Windows Command Line Syntax can be found [here][Windows Command-Line Syntax].
 
-#### Overview
+## CLI Element Examples
 
-| Type                               | Styles                                              |
-|------------------------------------|-----------------------|-----------------------------|
-| (positional/required) - argument   | ARGUMENT, <argument>, <ARGUMENT>                    |
-| option value                       | --option=value, --option=VALUE, --option <value>, --option <VALUE>, --option value, --option VALUE |
+| Type                               | Example(s) |
+|------------------------------------|------------|
+| argument (required/positional)     | ARGUMENT, \<argument\>, \<ARGUMENT\>                    |
+| option with value                  | --option=value, --option=VALUE, --option \<value\>, --option=\<value\>, --option value, --option VALUE |
+| switch                             | --light={on \| off}, --power {up \| down} |
+| flag                               | --track, --verbose, -V |
+| optional items                     | --track, --verbose, -V, [\<argument\>] |
+| mutually exclusive required items  | (--track \| --no-track), \<FILE\> \| \<PATH\>, --strengh={low\|mid\|high} |
+| end passing cli arguments          | `user@host ~$ cli foo -b --this -- other args` |
+| repeating items                    | \<argument\>... |
 
 
 
