@@ -56,19 +56,24 @@ options:
 ## Unix CLI
 ### Common CLI Elements
 
-| Element   | Description |
-|-----------|---------------------------------------------------------------|
-| **Text**  | Text without brackets or braces                               |
-| **TEXT**  | Upper case Text without brackets or braces                    |
-| **\<**name**\>**  | Placeholder for which you must supply a value       |
-| **[]**    | Optional items                                                |
-| **{}**    | Set of mutually exclusive but required items; choose one                             |
-| **()**    | Set of mutually exclusive but required items; choose one                             |
-| **\|**    | Vertical bar, Separator for mutually exclusive items; choose one |
-| **(…)**   | Ellipsis                                                      |
-| **-**     | Dash (often used as file argument parameter to specify stdin as file |
-| **--**    | used to indicate the end of the options when running a command. E.g. very useful if you want to delete a file with the name *-option* |
+| Elemnt                 | Symbol            | Description |
+|------------------------|-------------------|-------------|
+| text                   | **Text**          | without brackets or braces |
+| upper case text        | **TEXT**          | placeholder for which you must supply a vlaue |
+| text in angle brackets | **\<**name**\>**  | placeholder for which you must supply a value |
+| bracket                | **[]**            | optional items |
+| curly braces           | **{}**            | set of mutually exclusive but required items, choose one |
+| braces                 | **()**            | set of mutually exclusive but required items, choose one |
+| vertical bar           | **\|**            | seperates mutually exclusive items |
+| ellipsis               | **…**             | indicates that item (flag, option, arguemtn, ...) can be repeated multiple times |
+| dash                   | **-**             | indicates start of short option(s), if it stands alone it is often used as file argument parameter to specify stdin |
+| double dash            | **--**            | indicates the start of a long option or if not flowed by an option name it indicates the end of the cli arguements for the command |
 
+
+
+## Windows CLI
+### Common CLI Elements
+A definition of the Windows Command Line Syntax can be found [here][Windows Command-Line Syntax].
 
 #### Overview
 
@@ -77,10 +82,6 @@ options:
 | (positional/required) - argument   | ARGUMENT, <argument>, <ARGUMENT>                    |
 | option value                       | --option=value, --option=VALUE, --option <value>, --option <VALUE>, --option value, --option VALUE |
 
-
-## Windows CLI
-### Common CLI Elements
-A definition of the Windows Command Line Syntax can be found [here][Windows Command-Line Syntax].
 
 
 # References
