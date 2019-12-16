@@ -54,7 +54,7 @@ options:
 ```
 
 ## Unix CLI
-### CLI Elements
+### Common CLI Elements
 
 | Element   | Description |
 |-----------|---------------------------------------------------------------|
@@ -79,8 +79,7 @@ options:
 
 
 ## Windows CLI
-
-### CLI Elements
+### Common CLI Elements
 A definition of the Windows Command Line Syntax can be found [here][Windows Command-Line Syntax].
 
 
