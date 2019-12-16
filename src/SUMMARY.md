@@ -10,7 +10,6 @@
     - [Writing Command Line Tools](./cli/writing_cli_tools.md)
         - [C](./cli/languages/c.md)
         - [C++](./cli/languages/cpp.md)
-        - [Java](./cli/languages/java.md)
         - [Python](./cli/languages/python.md)
         - [Rust](./cli/languages/rust.md)
         - [Ruby](./cli/languages/ruby.md)
