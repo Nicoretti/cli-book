@@ -11,6 +11,7 @@ before_script:
   - pip install sphinx-rtd-theme
 script:
   - make html
+  - touch ./build/html/.nojekyll
 deploy:
   provider: pages
   skip-cleanup: true
