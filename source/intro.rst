@@ -4,10 +4,13 @@ Introduction
 Good tools matter!
 ++++++++++++++++++
 
-.. image:: https://imgs.xkcd.com/comics/tar.png
+.. figure:: https://imgs.xkcd.com/comics/tar.png
    :alt: xkcd-1168
    :target: https://xkcd.com/1168/
    :scale: 50
+
+   source: `xkcd.com <https://xkcd.com/1168/>`_
+   license: `CC BY-NC 2.5 <https://creativecommons.org/licenses/by-nc/2.5/>`_
 
 Why CLIs
 ++++++++
