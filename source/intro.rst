@@ -1,10 +1,16 @@
-# Introduction
+Introduction
+============
 
-## Good tools matter!
-![xkcd-1168](https://imgs.xkcd.com/comics/tar.png)
-**\BY\-NC 2.5** source: [xkcd.com](https://xkcd.com/1168/)
+Good tools matter!
+++++++++++++++++++
 
-## Why CLIs
+.. image:: https://imgs.xkcd.com/comics/tar.png
+   :alt: xkcd-1168
+   :target: https://xkcd.com/1168/
+   :scale: 50
+
+Why CLIs
+++++++++
 
 A well-done CLI is the best format to build a tool, because the CLI can be used on its own to build
 any other type of tool, and it provides a direct and explicit separation of responsibilities between

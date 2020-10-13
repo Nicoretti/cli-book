@@ -1,26 +1,21 @@
-language: rust
+language: python
+branches:
+  only:
+    - master
 sudo: false
-
-cache:
-  - cargo
-
-rust:
-  - stable
-
+python:
+  - 3.7
 before_script:
-  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.1" mdbook)
-  - cargo install-update -a
-
+  - pip install -U pip
+  - pip install sphinx
+  - pip install sphinx-rtd-theme
 script:
-  - mdbook build && mdbook test
-  - pwd
-
+  - make html
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: ./book
+  local-dir: ./build/html
   keep-history: false
   on:
     branch: master
