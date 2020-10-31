@@ -14,6 +14,7 @@ Welcome to the CLI-Book!
    syntax
    configuration
    implementation
+   tools
 
 
 
