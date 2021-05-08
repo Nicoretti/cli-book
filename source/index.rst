@@ -10,12 +10,9 @@ Welcome to the CLI-Book!
    :maxdepth: 2
 
    intro
-   basics
    syntax
-   configuration
    implementation
    tools
-   guides/index
 
 
 

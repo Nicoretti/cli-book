@@ -809,7 +809,3 @@ Misc
       -
       -
 
-CLI Configuration Files
-========================
-TBD
-
