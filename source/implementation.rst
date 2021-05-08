@@ -21,7 +21,7 @@ Talks
 Ruby
 ++++
 If you want to learn or read about more details on how to create great command line tools using ruby,
-I highly recommend you read this * `Book <https://pragprog.com/book/dccar/build-awesome-command-line-applications-in-ruby>`_,
+I highly recommend you read this `Book <https://pragprog.com/book/dccar/build-awesome-command-line-applications-in-ruby>`_,
 it covers the topic exhaustively.
 
 Talks
