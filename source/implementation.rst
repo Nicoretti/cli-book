@@ -41,6 +41,7 @@ for people which are interested in creating cli tools using rust. I'll recomend 
 Libraries
 ---------
 * `clap-rs <https://clap.rs/>`_
+* `structopt <https://crates.io/crates/structopt>`_
 
 References
 ----------
