@@ -12,6 +12,7 @@ Welcome to the CLI-Book!
    intro
    syntax
    implementation
+   testing
    tools
 
 
