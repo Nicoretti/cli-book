@@ -4,8 +4,8 @@ Implementation
 Python
 ++++++
 
-Libaries
---------
+Libraries
+---------
 * `Click <https://click.palletsprojects.com/en/7.x/>`_
 * `Docopt <http://docopt.org/>`_
 * `Prompt-Toolkit <https://python-prompt-toolkit.readthedocs.io/en/master/>`_
@@ -13,8 +13,8 @@ Libaries
 Talks
 -----
 * `Docopt talk <https://www.youtube.com/watch?v=pXhcPJK5cMc>`_
-* `Writing Awesome Command-Line Programms in Python <https://www.youtube.com/watch?v=gR73nLbbgqY>`_
-* `Aweseom command line tools in python (repl) <https://www.youtube.com/watch?v=hJhZhLg3obk>`_
+* `Writing Awesome Command-Line Programs in Python <https://www.youtube.com/watch?v=gR73nLbbgqY>`_
+* `Awesome command line tools in python (repl) <https://www.youtube.com/watch?v=hJhZhLg3obk>`_
 * `Lets make better command line applications <https://www.youtube.com/watch?v=ubXXmQzzNGo>`_
 
 
@@ -36,7 +36,7 @@ References
 Rust
 ++++
 The rust community has crated a working group ([CLI-WG][CLI-WG]) which is focusing an creating information and tooling
-for people which are interested in creating cli tools using rust. I'll recomend you take a look at their [book][Command Line Applicaitons in Rust].
+for people which are interested in creating cli tools using rust. I'll recommend you take a look at their [book][Command Line Application's in Rust].
 
 Libraries
 ---------

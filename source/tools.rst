@@ -3,8 +3,8 @@ __________________
 
 .. attention::
 
-    Be aware that the linked manual pages usualy point to the linux man page, in some
-    cases the parameters and flags sligthly differ on other \*nix system.
+    Be aware that the linked manual pages usually point to the linux man page, in some
+    cases the parameters and flags slightly differ on other \*nix system.
 
 Unix "One o One"
 ================
@@ -90,7 +90,7 @@ Unix "One o One"
       - Text
       -
     * - `less <https://linux.die.net/man/1/less>`_
-      - Page through text one screenful at a time
+      - Page through text one screen at a time
       - Text
       -
     * - `echo <https://linux.die.net/man/1/echo>`_
@@ -147,7 +147,7 @@ Unix "Advanced"
       -
       -
     * - `find <https://linux.die.net/man/1/find>`_
-      - Search for files in a directory hierachy
+      - Search for files in a directory hierarchy
       -
       -
     * - `zip <https://linux.die.net/man/1/zip>`_
@@ -203,7 +203,7 @@ Unix "Advanced"
       -
       -
     * - `at <https://linux.die.net/man/1/at>`_
-      - Queue, exxamine or delete jobs for later execution
+      - Queue, examine or delete jobs for later execution
       -
       -
     * - `shutdown <https://linux.die.net/man/1/shutdown>`_
@@ -461,11 +461,11 @@ Connectivity
       -
     * - `curl <https://linux.die.net/man/1/curl>`_
       -
-      - File-Transfer, Multiprotocol
+      - File-Transfer, multi protocol
       -
     * - `wget <https://www.gnu.org/software/wget/>`_
       -
-      - File-Transfer, Multiprotocol
+      - File-Transfer, multi protocol
       -
     * - `iftop <https://linux.die.net/man/8/iftop>`_
       -
@@ -473,15 +473,15 @@ Connectivity
       -
     * - `ffsend <https://github.com/timvisee/ffsend>`_
       -
-      - File-Transfer, Multiprotocol
+      - File-Transfer, multi protocol
       -
     * - `w3m <http://w3m.sourceforge.net/>`_
       -
-      - Webbrowser
+      - Browser
       -
     * - `lynx <https://lynx.browser.org/>`_
       -
-      - Webbrowser
+      - Browser
       -
     * - `can-utils <https://github.com/linux-can/can-utils>`_
       -
@@ -496,7 +496,7 @@ Connectivity
       - USB, System Information
       -
 
-Documenttation & Writing
+Documentation & Writing
 ------------------------
 
 .. list-table::
