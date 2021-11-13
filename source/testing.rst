@@ -78,7 +78,7 @@ ____
 
 Cram Advanced
 *************
-* Common Fixutres Shell scripts
+* Common Fixtures Shell scripts
     - let it fail
 
 Specdown
