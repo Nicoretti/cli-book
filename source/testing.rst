@@ -81,6 +81,9 @@ Cram Advanced
 * Common Fixutres Shell scripts
     - let it fail
 
+Specdown
+________
+
 
 assert_cmd (Rust)
 _________________
@@ -107,3 +110,22 @@ Examples
 * Testing GraphQl Endpoint
 * Testing RestEndpoint
 * Testing Protocol Dissector
+
+
+References
+----------
+* `curl <https://curl.se>`_
+* `socat <http://www.dest-unreach.org/socat/>`_
+* `tshark <https://www.wireshark.org/docs/man-pages/tshark.html>`_
+* `diff <https://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html>`_
+* `cram <https://bitheap.org/cram/>`_
+* `specdown <https://specdown.io>`_
+* `cucumber <https://cucumber.io/tools/cucumber-open/>`_
+    * `Rust <https://github.com/cucumber-rs/cucumber>`_
+    * `Python <http://behave.readthedocs.io>`_
+    * `Go <https://github.com/cucumber/godog>`_
+    * `Cpp <https://github.com/cucumber/cucumber-cpp>`_
+    * `Ruby <https://github.com/cucumber/cucumber-ruby>`_
+    * `Javascript <https://github.com/cucumber/cucumber-js>`_
+    * `JVM <https://github.com/cucumber/cucumber-jvm>`_
+    * `Other(s) <https://github.com/cucumber>`_
