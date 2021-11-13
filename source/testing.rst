@@ -40,6 +40,7 @@ ____________________________
 * output -> stdout
 * Maybe stderr
 * output files
+* Signal(s) & Signal handling
 
 Making your CLI testable
 _________________________
