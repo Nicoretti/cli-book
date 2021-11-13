@@ -85,10 +85,6 @@ Specdown
 ________
 
 
-assert_cmd (Rust)
-_________________
-TBD
-
 Socat
 _____
 e.g. connecting client + server impl and verify exit's
