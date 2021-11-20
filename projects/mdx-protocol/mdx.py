@@ -1,4 +1,7 @@
 #!/bin/python
+import enum
+import sys
+from enum import IntEnum
 from itertools import chain
 
 
@@ -23,5 +26,14 @@ class Channel:
         )))
 
 
+class Cli:
+    class ExitCode(enum.IntEnum):
+        SUCCESS = 0
+        FAILURE = -1
+
+    def main(self, argv=None):
+        sys.exit(Cli.ExitCode.SUCCESS)
+
+
 if __name__ == '__main__':
-    pass
+    Cli.main()
