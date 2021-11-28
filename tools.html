@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Line Tools &mdash; CLI-Book  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Testing" href="testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CLI-Book
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">CLI Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unix-one-o-one">Unix “One o One”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unix-advanced">Unix “Advanced”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-personal-toolbox">My Personal Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shell-s">Shell(s)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connectivity">Connectivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-writing">Documentation &amp; Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email">Email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encryption-passwords">Encryption / Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proccesses-monitoring">Proccesses / Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-unix-tools-alternatives">Standard Unix Tools Alternatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encoding-decoding">Encoding/Decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-manager">File Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calendar">Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-s-todo">Task(s) / Todo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finance">Finance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documents">Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#misc">Misc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CLI-Book</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Command Line Tools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-line-tools">
+<h1>Command Line Tools<a class="headerlink" href="#command-line-tools" title="Permalink to this headline"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Be aware that the linked manual pages usually point to the linux man page, in some
+cases the parameters and flags slightly differ on other *nix system.</p>
+</div>
+<section id="unix-one-o-one">
+<h2>Unix “One o One”<a class="headerlink" href="#unix-one-o-one" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Basic Unix Commands</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/rm">rm</a></p></td>
+<td><p>Remove files or directories</p></td>
+<td><p>File Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/mv">mv</a></p></td>
+<td><p>Move (rename) files</p></td>
+<td><p>File Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/ls">ls</a></p></td>
+<td><p>List directory contents</p></td>
+<td><p>File Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/cp">cp</a></p></td>
+<td><p>Copy files and directories</p></td>
+<td><p>File Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/tar">tar</a></p></td>
+<td><p>Archiving utility</p></td>
+<td><p>File Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/rmdir">rmdir</a></p></td>
+<td><p>Remove empty directories</p></td>
+<td><p>Directory Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/mkdir">mkdir</a></p></td>
+<td><p>Make directories</p></td>
+<td><p>Directory Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/cd">cd</a></p></td>
+<td><p>Change the current working directory</p></td>
+<td><p>Directory Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/ls">pwd</a></p></td>
+<td><p>Print name of current/working directory</p></td>
+<td><p>Directory Operations</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/df">df</a></p></td>
+<td><p>Report file system disk space usage</p></td>
+<td><p>File System</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/du">du</a></p></td>
+<td><p>Estimate file space usage</p></td>
+<td><p>File System</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/mount">mount</a></p></td>
+<td><p>Mount a filesystem</p></td>
+<td><p>File System</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/umount">umount</a></p></td>
+<td><p>Unmount file systems</p></td>
+<td><p>File System</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/cat">cat</a></p></td>
+<td><p>Concatenate files and print on the standard output</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/cut">cut</a></p></td>
+<td><p>Remove sections from each line of files</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/head">head</a></p></td>
+<td><p>Output the first part of files</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/tail">tail</a></p></td>
+<td><p>Output the last part of files</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/grep">grep</a></p></td>
+<td><p>Print lines matching a pattern</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/less">less</a></p></td>
+<td><p>Page through text one screen at a time</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/echo">echo</a></p></td>
+<td><p>Display a line of text</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/chmod">chmod</a></p></td>
+<td><p>Change file mode bits</p></td>
+<td><p>Access Rights</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/chown">chown</a></p></td>
+<td><p>Change file owner/group</p></td>
+<td><p>Access Rights</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/chgrp">chgrp</a></p></td>
+<td><p>change group ownership</p></td>
+<td><p>Access Rights</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/ps">ps</a></p></td>
+<td><p>Report a snapshot of the current processes</p></td>
+<td><p>Process Management</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/top">top</a></p></td>
+<td><p>Display processes</p></td>
+<td><p>Process Management</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/kill">kill</a></p></td>
+<td><p>Send a signal to a process / Kill a process</p></td>
+<td><p>Process Management</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/man">man</a></p></td>
+<td><p>Format and display the one-line manual pages</p></td>
+<td><p>Help</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/apropos">apropos</a></p></td>
+<td><p>Search the manual page names and descriptions</p></td>
+<td><p>Help</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unix-advanced">
+<h2>Unix “Advanced”<a class="headerlink" href="#unix-advanced" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Advanced Unix Commands</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/file">file</a></p></td>
+<td><p>Determine file type</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/find">find</a></p></td>
+<td><p>Search for files in a directory hierarchy</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/zip">zip</a></p></td>
+<td><p>Package and compress (archive) files</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/unzip">unzip</a></p></td>
+<td><p>List, test and extract compressed files in a ZIP archive</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/gzip">gzip</a></p></td>
+<td><p>Compress or expand files</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/umask">umask</a></p></td>
+<td><p>Get or set the file mode creation mask</p></td>
+<td><p>Access Rights</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/diff">diff</a></p></td>
+<td><p>Compare files line by line</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/wc">wc</a></p></td>
+<td><p>Print newline, word, and byte counts for each file</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/sort">sort</a></p></td>
+<td><p>Sort lines of text files</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/sed">sed</a></p></td>
+<td><p>Stream editor for filtering and transforming text</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/date">date</a></p></td>
+<td><p>Print or set the system date and time</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/who">who</a></p></td>
+<td><p>Show who is logged on</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/dd">dd</a></p></td>
+<td><p>Convert and copy a file</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/id">id</a></p></td>
+<td><p>Print real and effective user and group IDs</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/uname">uname</a></p></td>
+<td><p>Print system information</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/at">at</a></p></td>
+<td><p>Queue, examine or delete jobs for later execution</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/shutdown">shutdown</a></p></td>
+<td><p>Bring the system down</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/nice">nice</a></p></td>
+<td><p>Run a program with modified scheduling priority</p></td>
+<td><p>Process Management</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/spell">spell</a></p></td>
+<td></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/ldd">ldd</a></p></td>
+<td><p>Print shared library dependencies</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/seq">seq</a></p></td>
+<td><p>Print a sequence of numbers</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/sleep">sleep</a></p></td>
+<td><p>Delay for a specified amount of time</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/read">read</a></p></td>
+<td><p>Read a single line from stdin or file</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/tr">tr</a></p></td>
+<td><p>Translate or delete characters</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/tee">tee</a></p></td>
+<td><p>Read from standard input and write to standard output and files</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/uniq">uniq</a></p></td>
+<td><p>Report or omit repeated lines</p></td>
+<td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/8/ifconfig">ifconfig</a></p></td>
+<td><p>Configure a network interface</p></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/8/ip">ip</a></p></td>
+<td><p>Show/Manipulate routing, devices, policy and tunnels</p></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/8/netstat">netstat</a></p></td>
+<td><p>Print network connections, routing tables, etc.</p></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/8/ping">ping</a></p></td>
+<td><p>Send ICMP echo request to network host</p></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/telnet">telnet</a></p></td>
+<td><p>User interface to the TELNET protocol</p></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/ftp">ftp</a></p></td>
+<td><p>Internet file transfer program</p></td>
+<td><p>Networking, File-Transfer</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/nslookup">nslookup</a></p></td>
+<td><p>Query Internet name servers interactively</p></td>
+<td><p>Networking, Lookup</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/finger">finger</a></p></td>
+<td><p>User information lookup program</p></td>
+<td><p>Networking, Lookup</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/history">history</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/w">w</a></p></td>
+<td><p>Show who is logged on and what they are doing</p></td>
+<td><p>System Info</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/watch">watch</a></p></td>
+<td><p>Execute a program periodically</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/whoami">whoami</a></p></td>
+<td><p>Print effective userid</p></td>
+<td><p>System Info</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="my-personal-toolbox">
+<h2>My Personal Toolbox<a class="headerlink" href="#my-personal-toolbox" title="Permalink to this headline"></a></h2>
+<section id="shell-s">
+<h3>Shell(s)<a class="headerlink" href="#shell-s" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Shell</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.zsh.org/">zsh</a></p></td>
+<td><p>The Z shell</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ipython.org/">ipython</a></p></td>
+<td><p>An enhanced interactive python shell</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/nushell/nushell">nushell</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="development">
+<h3>Development<a class="headerlink" href="#development" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://lldb.llvm.org/">LLDB</a></p></td>
+<td></td>
+<td><p>Debugger</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.gnu.org/software/gdb/">GDB</a></p></td>
+<td><p>Allows you to see whats going on <cite>inside</cite> another program</p></td>
+<td><p>Debugger</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.gnu.org/software/binutils/">Binutils</a></p></td>
+<td><p>A collection of binary tools</p></td>
+<td><p>Binaries</p></td>
+<td><p><a class="reference internal" href="guides/bintuils.html#binutils-guide"><span class="std std-ref">link</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://llvm.org/docs/CommandGuide/">LLVM Tools</a></p></td>
+<td></td>
+<td><p>Binaries</p></td>
+<td><p><a class="reference internal" href="guides/llvm_tools.html#llvm-tools-guide"><span class="std std-ref">link</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ReFirmLabs/binwalk">binwalk</a></p></td>
+<td><p>Various development tools</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/xxd">xxd</a></p></td>
+<td><p>Make a hexdump or the reverse</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/Nicoretti/xxd-rs">xxd-rs</a></p></td>
+<td><p>An xxd clone written in rust</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/sharkdp/hexyl">hexyl</a></p></td>
+<td><p>Simple hex viewer for the terminal</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://srecord.sourceforge.net/">SRecord</a></p></td>
+<td><p>Collection of tools for manipulating EPROM load files</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.unix.com/man-page/osx/1/otool/">otool</a></p></td>
+<td><p>Object file displaying tool</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/arm-linux-gnu-elfedit">elfedit</a></p></td>
+<td><p>Update the ELF header of ELF files</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/readelf">elfdump</a></p></td>
+<td><p>Display information about ELF file</p></td>
+<td><p>Binaries</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://rustup.rs/">rustup</a></p></td>
+<td><p>Installer for systems programming language rust</p></td>
+<td><p>Rust, Toolchain, Compiler</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/rust-lang/cargo">cargo</a></p></td>
+<td><p>Build and dependency tool for the rust programming language</p></td>
+<td><p>Rust, Build-Tool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.rust-lang.org/">rustc</a></p></td>
+<td><p>The rust compiler</p></td>
+<td><p>Rust, Compiler</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://clang.llvm.org">clang</a></p></td>
+<td><p>Clang C, C++, and Objective-C compiler</p></td>
+<td><p>C/C++, Compiler</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://gcc.gnu.org">gcc</a></p></td>
+<td><p>GNU project C and C++ compiler</p></td>
+<td><p>C/C++, Compiler</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.gnu.org/software/make/">make</a></p></td>
+<td><p>GNU make utility to maintain groups of programs</p></td>
+<td><p>Build-Tool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://git-scm.com/">git</a></p></td>
+<td><p>the stupid content tracker</p></td>
+<td><p>SCM, Git</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/cli/cli">gh</a></p></td>
+<td><p>Github CLI</p></td>
+<td><p>SCM, Git</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.vim.org">vim</a></p></td>
+<td><p>Vi IMproved, a programmer’s text editor</p></td>
+<td><p>Editor</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://neovim.io">neovim</a></p></td>
+<td><p>Edit text</p></td>
+<td><p>Editor</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://pyserial.readthedocs.io/en/latest/tools.html#module-serial.tools.miniterm">miniterm</a></p></td>
+<td><p>A console application that provides a small terminal application</p></td>
+<td><p>Connectivity, Serial</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="connectivity">
+<h3>Connectivity<a class="headerlink" href="#connectivity" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.dest-unreach.org/socat/">socat</a></p></td>
+<td><p>Multipurpose relay (SOcket CAT)</p></td>
+<td><p>Serial, TCP/IP, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/8/arping">arpping</a></p></td>
+<td></td>
+<td><p>Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wireshark.org/docs/man-pages/tshark.html">tshark</a></p></td>
+<td></td>
+<td><p>Tracing, TCP/IP, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/ssh">ssh</a></p></td>
+<td></td>
+<td><p>SSH, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://mosh.org/">mosh</a></p></td>
+<td></td>
+<td><p>SSH, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/scp">scp</a></p></td>
+<td></td>
+<td><p>File-Transfer, SSH, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/1/rsync">rsync</a></p></td>
+<td></td>
+<td><p>File-Transfer, SSH, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/curl">curl</a></p></td>
+<td></td>
+<td><p>File-Transfer, multi protocol</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.gnu.org/software/wget/">wget</a></p></td>
+<td></td>
+<td><p>File-Transfer, multi protocol</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/8/iftop">iftop</a></p></td>
+<td></td>
+<td><p>Monitoring, Networking</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/timvisee/ffsend">ffsend</a></p></td>
+<td></td>
+<td><p>File-Transfer, multi protocol</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://w3m.sourceforge.net/">w3m</a></p></td>
+<td></td>
+<td><p>Browser</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://lynx.browser.org/">lynx</a></p></td>
+<td></td>
+<td><p>Browser</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/linux-can/can-utils">can-utils</a></p></td>
+<td></td>
+<td><p>CAN</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://python-can.readthedocs.io/en/master/scripts.html">can-scripts</a></p></td>
+<td></td>
+<td><p>CAN</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/8/lsusb">lsusb</a></p></td>
+<td></td>
+<td><p>USB, System Information</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="documentation-writing">
+<h3>Documentation &amp; Writing<a class="headerlink" href="#documentation-writing" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://graphviz.org/">graphiz</a></p></td>
+<td></td>
+<td><p>Visualization</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.gnuplot.info/">gnuplot</a></p></td>
+<td></td>
+<td><p>Plot, Image</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">sphinx</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://plantuml.com/de/">plantuml</a></p></td>
+<td></td>
+<td><p>UML</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://pandoc.org/">pandoc</a></p></td>
+<td></td>
+<td><p>Format Converter</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/Canop/termimad">termimad</a></p></td>
+<td></td>
+<td><p>Markdown, Renderer</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="email">
+<h3>Email<a class="headerlink" href="#email" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://isync.sourceforge.io/">isync</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://neomutt.org/">neomutt</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://notmuchmail.org/">notmuch</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="encryption-passwords">
+<h3>Encryption / Passwords<a class="headerlink" href="#encryption-passwords" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://gnupg.org/">gpg</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.passwordstore.org/">pass</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proccesses-monitoring">
+<h3>Proccesses / Monitoring<a class="headerlink" href="#proccesses-monitoring" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://linux.die.net/man/8/lsof">lsof</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/strace">strace</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/cjbassi/ytop">ytop</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://linux.die.net/man/1/htop">htop</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="standard-unix-tools-alternatives">
+<h3>Standard Unix Tools Alternatives<a class="headerlink" href="#standard-unix-tools-alternatives" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/BurntSushi/ripgrep">ripgrep</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/sharkdp/bat">bat</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/sharkdp/fd">fd</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ogham/exa">exa</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/Canop/broot">broot</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/tmux/tmux/wiki">tmux</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>python -m zipfile</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>python -m tarfile</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="encoding-decoding">
+<h3>Encoding/Decoding<a class="headerlink" href="#encoding-decoding" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>python -m base64</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formatting">
+<h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>python -m json.tool</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file-manager">
+<h3>File Manager<a class="headerlink" href="#file-manager" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://midnight-commander.org/">mc</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/jarun/nnn">nnn</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ranger/ranger">ranger</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="contacts">
+<h3>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+<section id="calendar">
+<h3>Calendar<a class="headerlink" href="#calendar" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/pimutils/khal">khal</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="task-s-todo">
+<h3>Task(s) / Todo<a class="headerlink" href="#task-s-todo" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://taskwarrior.org/">Taskworrior</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.ledger-cli.org/">ledger</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="finance">
+<h3>Finance<a class="headerlink" href="#finance" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.ledger-cli.org/">ledger</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="documents">
+<h3>Documents<a class="headerlink" href="#documents" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/papis/papis">papis</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="misc">
+<h3>Misc<a class="headerlink" href="#misc" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Guide(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>urlscan</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>urlopen</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>imgmagick</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>youtube-dl</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, Nicola Coretti.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

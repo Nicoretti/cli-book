@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLI Syntax &mdash; CLI-Book  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Implementation" href="implementation.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CLI-Book
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CLI Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anotated-cli-help-example">Anotated CLI Help Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unix-cli">Unix CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-cli-elements">Common CLI Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-cli">Windows CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Common CLI Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-element-examples">CLI Element Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CLI-Book</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>CLI Syntax</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/syntax.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cli-syntax">
+<h1>CLI Syntax<a class="headerlink" href="#cli-syntax" title="Permalink to this headline"></a></h1>
+<p>Before you start reading this chapter I highly recommend you read the [POSIX Utility Conventions][POSIX Utility Conventions].
+It is approximately a 10-20 minute read which will provide a solid base when it comes to CLIs and their syntax.</p>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline"></a></h2>
+<p>If you read about command lines and command line interfaces usually you will find a specific kind of terminology
+(<em>command, utility, subcommand, argument, option, flag, switch, operand</em>) even though the meaning does slightly differ
+depending on which source or in which context a term is mentioned.
+To make sure we are all on the same page regarding these terms, please read the following table,
+which describes the terms and their meaning in the context of this book.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 15%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Terminology of this Book</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Names in other standards/definitions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>command</p></td>
+<td><p>a cli tool / command</p></td>
+<td><p>utility (Posix)</p></td>
+</tr>
+<tr class="row-odd"><td><p>subcommand</p></td>
+<td><p>a subcommand of a command/cmd group</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>argument (required/positional)</p></td>
+<td><p>required/positional-argument</p></td>
+<td><p>operand (Posix)</p></td>
+</tr>
+<tr class="row-odd"><td><p>option</p></td>
+<td><p>setting with additional argument</p></td>
+<td><p>option (Posix)</p></td>
+</tr>
+<tr class="row-even"><td><p>switch</p></td>
+<td><p>Like an option but with a set of mutally exclusive arguments</p></td>
+<td><p>option (Posix)</p></td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>Super set of flags + switches + options</p></td>
+<td><p>options (Posix)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>with the specification above there is an ambiguity when it comes to using the word options.</p>
+</div>
+<p>Here, options could mean either:</p>
+<ul class="simple">
+<li><p>The plural of an option - a setting with an additional argument</p></li>
+<li><p>Options - The super set of flags + switches + options</p></li>
+</ul>
+<p>Therefore, when talking about the plural of option one should say options of type option, and when talking about the super set of all options, switches, and flags one should simply say options.</p>
+</section>
+<section id="anotated-cli-help-example">
+<h2>Anotated CLI Help Example<a class="headerlink" href="#anotated-cli-help-example" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Short</span> <span class="n">description</span> <span class="n">what</span> <span class="n">this</span> <span class="n">command</span> <span class="n">does</span>
+
+<span class="n">usage</span><span class="p">:</span>
+
+<span class="n">cmd</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span>
+
+<span class="n">arguments</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>  <span class="n">which</span> <span class="n">shall</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">the</span> <span class="n">login</span>             <span class="c1"># 1. required/positional-argument</span>
+    <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span>  <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">username</span>        <span class="c1"># 2. required/positional-argument</span>
+
+<span class="n">flags</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="n">force</span>                 <span class="n">execute</span> <span class="n">action</span> <span class="n">anyway</span>         <span class="c1"># 5. flag</span>
+    <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                  <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span>        <span class="c1"># 6. flag</span>
+
+<span class="n">options</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>   <span class="n">file</span> <span class="n">which</span> <span class="n">shall</span> <span class="n">be</span> <span class="n">processed</span> <span class="c1"># 3. option</span>
+    <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">unit</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">speed</span> <span class="o">&lt;</span><span class="n">unit</span><span class="o">&gt;</span>   <span class="n">mph</span><span class="p">,</span><span class="n">kmh</span>  <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="n">mph</span><span class="p">]</span>       <span class="c1"># 4. switch</span>
+</pre></div>
+</div>
+</section>
+<section id="unix-cli">
+<h2>Unix CLI<a class="headerlink" href="#unix-cli" title="Permalink to this headline"></a></h2>
+<section id="common-cli-elements">
+<h3>Common CLI Elements<a class="headerlink" href="#common-cli-elements" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>Text</p></td>
+<td><p>without brackets or braces</p></td>
+</tr>
+<tr class="row-odd"><td><p>upper case text</p></td>
+<td><p>TEXT</p></td>
+<td><p>placeholder for which you must supply a vlaue</p></td>
+</tr>
+<tr class="row-even"><td><p>text in angle brackets</p></td>
+<td><p>&lt;name&gt;</p></td>
+<td><p>placeholder for which you must supply a value</p></td>
+</tr>
+<tr class="row-odd"><td><p>bracket</p></td>
+<td><p>[]</p></td>
+<td><p>optional items</p></td>
+</tr>
+<tr class="row-even"><td><p>curly braces</p></td>
+<td><p>{}</p></td>
+<td><p>set of mutually exclusive but required items, choose one</p></td>
+</tr>
+<tr class="row-odd"><td><p>braces</p></td>
+<td><p>()</p></td>
+<td><p>set of mutually exclusive but required items, choose one</p></td>
+</tr>
+<tr class="row-even"><td><p>vertical bar</p></td>
+<td><p>|</p></td>
+<td><p>seperates mutually exclusive items</p></td>
+</tr>
+<tr class="row-odd"><td><p>ellipsis</p></td>
+<td><p>…</p></td>
+<td><p>indicates that item (flag, option, arguemtn, …) can be repeated multiple times</p></td>
+</tr>
+<tr class="row-even"><td><p>dash</p></td>
+<td><p>-</p></td>
+<td><p>indicates start of short option(s), if it stands alone it is often used as file argument parameter to specify stdin</p></td>
+</tr>
+<tr class="row-odd"><td><p>double dash</p></td>
+<td><p>--</p></td>
+<td><p>indicates the start of a long option or if not flowed by an option name it indicates the end of the cli arguements for the command</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="windows-cli">
+<h2>Windows CLI<a class="headerlink" href="#windows-cli" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3>Common CLI Elements<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<p>A definition of the Windows Command Line Syntax can be found [here][Windows Command-Line Syntax].</p>
+</section>
+<section id="cli-element-examples">
+<h3>CLI Element Examples<a class="headerlink" href="#cli-element-examples" title="Permalink to this headline"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Example(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>argument (required/positional)</p></td>
+<td><p>ARGUMENT, &lt;argument&gt;, &lt;ARGUMENT&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>option with value</p></td>
+<td><p>--option=value, --option=VALUE, --option &lt;value&gt;, --option=&lt;value&gt;, --option value, --option VALUE</p></td>
+</tr>
+<tr class="row-even"><td><p>switch</p></td>
+<td><p>--light={on | off}, -\-power {up | down}</p></td>
+</tr>
+<tr class="row-odd"><td><p>flag</p></td>
+<td><p>--track, --verbose, -V</p></td>
+</tr>
+<tr class="row-even"><td><p>optional items</p></td>
+<td><p>--track, --verbose, -V, [&lt;argument&gt;]</p></td>
+</tr>
+<tr class="row-odd"><td><p>mutually exclusive required items</p></td>
+<td><p>(--track | --no-track), &lt;FILE&gt; | &lt;PATH&gt;, --strengh={low|mid|high}</p></td>
+</tr>
+<tr class="row-even"><td><p>end passing cli arguments</p></td>
+<td><p><cite>user&#64;host ~$ cli foo -b –this – other args</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>repeating items</p></td>
+<td><p>&lt;argument&gt;…</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">POSIX Utility Conventions</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/command-line-syntax-key">Windows Command-Line Syntax</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="implementation.html" class="btn btn-neutral float-right" title="Implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, Nicola Coretti.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing &mdash; CLI-Book  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command Line Tools" href="tools.html" />
+    <link rel="prev" title="Implementation" href="implementation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CLI-Book
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">CLI Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-structure-for-testable-python-cli-s">General structure for testable python cli’s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mocking-stdin-stdout-stderr">Mocking stdin, stdout, stderr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-sure-argv-cann-be-passed">Make sure argv cann be passed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-check-exit-code">How to check exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rust">Rust</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-tests">Integration Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-should-you-be-checking">What should you be checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-your-cli-testable">Making your CLI testable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell-scripts">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cram">Cram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cram-advanced">Cram Advanced</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#specdown">Specdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#socat">Socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tshark">Tshark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#curl">Curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diff">Diff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CLI-Book</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Testing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/testing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h1>
+<p>In this chapter we will discuss various ways how to test command line tools.</p>
+<section id="unit-tests">
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline"></a></h2>
+<p>Unit tests are highly language and framework specific, therefore we will discuss most of the specific(s) within
+the language specific subsections.</p>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline"></a></h3>
+<section id="general-structure-for-testable-python-cli-s">
+<h4>General structure for testable python cli’s<a class="headerlink" href="#general-structure-for-testable-python-cli-s" title="Permalink to this headline"></a></h4>
+<p>TBD</p>
+</section>
+<section id="mocking-stdin-stdout-stderr">
+<h4>Mocking stdin, stdout, stderr<a class="headerlink" href="#mocking-stdin-stdout-stderr" title="Permalink to this headline"></a></h4>
+<p>TBD</p>
+</section>
+<section id="make-sure-argv-cann-be-passed">
+<h4>Make sure argv cann be passed<a class="headerlink" href="#make-sure-argv-cann-be-passed" title="Permalink to this headline"></a></h4>
+<p>TBD</p>
+</section>
+<section id="how-to-check-exit-code">
+<h4>How to check exit code<a class="headerlink" href="#how-to-check-exit-code" title="Permalink to this headline"></a></h4>
+<p>TBD</p>
+</section>
+</section>
+<section id="rust">
+<h3>Rust<a class="headerlink" href="#rust" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+</section>
+<section id="integration-tests">
+<h2>Integration Tests<a class="headerlink" href="#integration-tests" title="Permalink to this headline"></a></h2>
+<section id="what-should-you-be-checking">
+<h3>What should you be checking<a class="headerlink" href="#what-should-you-be-checking" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Return Code(s)</p></li>
+<li><p>output -&gt; stdout</p></li>
+<li><p>Maybe stderr</p></li>
+<li><p>output files</p></li>
+</ul>
+</section>
+<section id="making-your-cli-testable">
+<h3>Making your CLI testable<a class="headerlink" href="#making-your-cli-testable" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>timeouts</p></li>
+<li><p>count’s</p></li>
+<li><p>return code</p></li>
+<li><p>output stdout/stderr</p></li>
+<li><p>input stdin</p></li>
+<li><p>input output format(s)</p></li>
+</ul>
+</section>
+<section id="shell-scripts">
+<h3>Shell Scripts<a class="headerlink" href="#shell-scripts" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>diff</p></li>
+<li><p>shell scripts</p></li>
+</ul>
+</section>
+<section id="cram">
+<h3>Cram<a class="headerlink" href="#cram" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Creating input files</p></li>
+<li><dl class="simple">
+<dt>Making sure tests fail</dt><dd><ul>
+<li><p>count</p></li>
+<li><p>poll</p></li>
+<li><p>timeout</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Checking return codes</p></li>
+<li><p>checking stdout</p></li>
+<li><p>checking stderr</p></li>
+<li><dl class="simple">
+<dt>quirks</dt><dd><ul>
+<li><p>indention</p></li>
+<li><p>blocking</p></li>
+<li><p>cleanup</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="cram-advanced">
+<h4>Cram Advanced<a class="headerlink" href="#cram-advanced" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Common Fixtures Shell scripts</dt><dd><ul>
+<li><p>let it fail</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section id="specdown">
+<h3>Specdown<a class="headerlink" href="#specdown" title="Permalink to this headline"></a></h3>
+</section>
+<section id="socat">
+<h3>Socat<a class="headerlink" href="#socat" title="Permalink to this headline"></a></h3>
+<p>e.g. connecting client + server impl and verify exit’s</p>
+</section>
+<section id="tshark">
+<h3>Tshark<a class="headerlink" href="#tshark" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+<section id="curl">
+<h3>Curl<a class="headerlink" href="#curl" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+<section id="diff">
+<h3>Diff<a class="headerlink" href="#diff" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Testing GraphQl Endpoint</p></li>
+<li><p>Testing RestEndpoint</p></li>
+<li><p>Testing Protocol Dissector</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://curl.se">curl</a></p></li>
+<li><p><a class="reference external" href="http://www.dest-unreach.org/socat/">socat</a></p></li>
+<li><p><a class="reference external" href="https://www.wireshark.org/docs/man-pages/tshark.html">tshark</a></p></li>
+<li><p><a class="reference external" href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html">diff</a></p></li>
+<li><p><a class="reference external" href="https://bitheap.org/cram/">cram</a></p></li>
+<li><p><a class="reference external" href="https://specdown.io">specdown</a></p></li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://cucumber.io/tools/cucumber-open/">cucumber</a></dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/cucumber-rs/cucumber">Rust</a></p></li>
+<li><p><a class="reference external" href="http://behave.readthedocs.io">Python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber/godog">Go</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber/cucumber-cpp">Cpp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber/cucumber-ruby">Ruby</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber/cucumber-js">Javascript</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber/cucumber-jvm">JVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cucumber">Other(s)</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implementation.html" class="btn btn-neutral float-left" title="Implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tools.html" class="btn btn-neutral float-right" title="Command Line Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, Nicola Coretti.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
